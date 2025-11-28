@@ -1,2 +1,6 @@
-const userInput = eval("2 + 2");  // ⚠ Dangerous eval
-console.log(userInput);
+function runUserCode(input) {
+    // CodeQL will flag this: js/dangerous-eval
+    return eval(input);
+}
+
+runUserCode("process.exit()");
